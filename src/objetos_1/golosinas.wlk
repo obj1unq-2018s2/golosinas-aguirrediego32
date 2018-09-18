@@ -31,7 +31,7 @@ object caramelo {
 	method libreGluten() {return true}
 	method mordisco(){if(peso > 0)
 		{peso = peso - 1
-		}else{ peso ="ya no hay mas caramelo pa"
+		}else{ peso ="ya no hay mas caramelo "
 			 }
 		}
 }
