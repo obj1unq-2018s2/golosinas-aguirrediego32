@@ -1,0 +1,41 @@
+import golosinas.*
+describe "test golosinas baniadas chupetin"{
+	test"peso"{
+		golosinaBaniada.baniaA(chupetin)
+		assert.equals(11,golosinaBaniada.peso())
+	}
+	
+	test"precio"{
+		golosinaBaniada.baniaA(chupetin)
+		assert.equals(4,golosinaBaniada.precio())
+	}
+	test"gusto"{
+		golosinaBaniada.baniaA(chupetin)
+		assert.equals("naranja",golosinaBaniada.gusto())
+	}
+	test"libreGluten"{
+		golosinaBaniada.baniaA(chupetin)
+		assert.equals(true,golosinaBaniada.libreGluten())
+	}
+	
+	test"mordisco"{
+		golosinaBaniada.baniaA(chupetin)
+		golosinaBaniada.mordisco()
+		assert.equals(8.3,golosinaBaniada.peso())
+	}
+	
+	test"mordisco 2"
+	golosinaBaniada.baniaA(chupetin)
+	golosinaBaniada.mordisco()
+	golosinaBaniada.mordisco()
+	assert.equals(5.67,golosinaBaniada.peso())
+	}
+	
+	test"mordisco 3"{
+		golosinaBaniada.baniaA(chupetin)
+		golosinaBaniada.mordisco()
+		golosinaBaniada.mordisco()
+		golosinaBaniada.mordisco()
+		assert.equals(5.103,golosinaBaniada.peso())
+		}
+}

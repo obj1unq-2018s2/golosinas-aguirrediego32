@@ -16,7 +16,7 @@ object alfajor {
 	method precio() { return  12}
 	method gusto() {return "chocolate"}
 	method libreGluten(){return false}
-	method mordisco(){if(peso > 0)
+	method mordisco(){return if(peso > 0)
 						{peso = peso * 0.8
 						}else{ peso = 0
 							 }
@@ -43,7 +43,7 @@ object chupetin {
 	method gusto(){return "naranja"}
 	method libreGluten(){return true}
 	method mordisco(){if(peso > 2)
-					{peso -= peso * 0.1						
+					{peso -= peso * 0.1				
 					}else{ peso}
 	}
 }
@@ -67,10 +67,13 @@ object chocolatin {
 	var pesoInicial
 	var  pesoActual
 	method libreGluten(){return false}
-	/* al principio, el peso actual coincide con el inicial */
-	method pesoInicial(cuanto) { 
+	
+	method pesoInicial(cuanto) { /* al principio, el peso actual coincide con el inicial */
 		pesoInicial = cuanto
 		pesoActual = cuanto
+	}
+	method peso(){
+		return pesoActual
 	}
 	method precio(){return pesoInicial * 0.5}
 	method mordisco(){ pesoActual = pesoActual -2}
@@ -82,7 +85,7 @@ object golosinaBaniada {
 	
 	method baniaA(unaGolosina) { golosinaInterior = unaGolosina }
 	method precio() {return golosinaInterior.precio() + 2}
-	method peso() { return golosinaInterior.peso() + 4 }
+	method peso() { return golosinaInterior.peso() + pesoBanio }
 	method mordisco() {
 		golosinaInterior.mordisco()
 		if (pesoBanio > 0) { pesoBanio -= 2 }
@@ -104,5 +107,6 @@ object tuttifrutti {
 		cantMordiscos = if (cantMordiscos >= sabores.size() - 1) 0 else cantMordiscos + 1
 		sabor = sabores.get(cantMordiscos)
 	}
+	method gusto(){return sabor}
 			
 }
