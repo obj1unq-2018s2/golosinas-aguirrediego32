@@ -6,7 +6,7 @@ object mariano {
 		
 		method comprar(golosina)= bolsaDeGolosinas.add(golosina)
 		
-		method desechar(golosina)= bolsaDeGolosinas.remover(golosina)
+		method desechar(golosina)= bolsaDeGolosinas.remove(golosina)
 		
 		method probarGolosinas() = bolsaDeGolosinas.forEach({elemento=> elemento.mordisco()})
 		
@@ -14,15 +14,15 @@ object mariano {
 		
 		method pesoGolosinas() = bolsaDeGolosinas.sum({golosina => golosina.peso()})
 		
-		method preciosCuidados()= bolsaDeGolosinas.all{elemento => elemento>= 10}
+		method preciosCuidados()= bolsaDeGolosinas.all{elemento => elemento.precio()>= 10}
 		
 		method golosinaDeSabor(unSabor)= bolsaDeGolosinas.find{elemento => elemento.gusto()== unSabor}
 		
-		method golosinasDeSabor(unSabor) = bolsaDeGolosinas.filter{elemento => elemento.gusto() == unSabor}
+		method golosinasDeSabor(unSabor) = bolsaDeGolosinas.filter{elemento => elemento.gusto() == unSabor }
 		
 		method sabores()= bolsaDeGolosinas.map {golosina => golosina.gusto()}
 		
-		method golosinaMasCara()= bolsaDeGolosinas.max{elemento => elemento.precio()}
+		method golosinaMasCara()= return bolsaDeGolosinas.max{elemento => elemento.precio()}
 		
 		method golosinasFaltantes(golosinasDeseadas)=golosinasDeseadas.asSet().difference(bolsaDeGolosinas.asSet())
 		

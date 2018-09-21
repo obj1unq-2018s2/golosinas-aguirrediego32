@@ -32,5 +32,27 @@ describe "tests de mariano" {
 	}
 	test "sin TACC"{
 		assert.equals(true, mariano.hayGolosinaSinTACC())
+	}
+	test "mariano compra tres golosinas y descarta un caramelo"{
+		mariano.comprar(chocolatin)
+		mariano.comprar(caramelo)
+		mariano.comprar(bombon)()
+		mariano.desechar(caramelo)
+		assert.equals(mariano.golosinasCompradas(), #[bombon,chocolatin])
+	}
+	test "test golosinas faltantes" {	
+	mariano.comprar(oblea)
+	mariano.comprar(caramelo)
+	mariano.comprar(bombon)
+	assert.equals(#{alfajor,tuttifrutti, chupetin}, mariano.golosinasFaltantes([alfajor, bombon,tuttifrutti, oblea, chupetin]))	
 }
-
+	test"no todos son precios cuidados"{
+		mariano.comprar(oblea)
+		mariano.comprar(bombon)
+		mariano.comprar(alfajor)
+		mariano.comprar(chupetin)
+		mariano.comprar(tuttifrutti)
+		mariano.comprar(oblea)
+		assert.notThat(mariano.preciosCuidados())
+	}
+}

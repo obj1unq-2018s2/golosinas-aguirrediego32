@@ -1,0 +1,47 @@
+import golosinas.*
+import mariano.*
+
+describe "tests de mariano" {
+	test"golosina mas cara tuttifrutti "{
+		mariano.comprar(chupetin)
+		mariano.comprar(oblea)
+		mariano.comprar(caramelo)
+		mariano.comprar(tuttifrutti)
+		mariano.comprar(bombon)
+		assert.equals(tuttifrutti,mariano.golosinaMasCara())
+	}
+	
+	test"peso total de las golosinas 570"{
+		mariano.comprar(alfajor)
+		mariano.comprar(bombon)
+		mariano.comprar(caramelo)
+		mariano.comprar(oblea)
+		assert.equals(570,mariano.pesoGolosinas())
+	}
+	test"la primer golosina de sabor frutilla"{
+		mariano.comprar(chupetin)
+		mariano.comprar(alfajor)
+		mariano.comprar(oblea)
+		mariano.comprar(caramelo)
+		mariano.comprar(tuttifrutti)
+		assert.equals(caramelo,mariano.golosinaDeSabor("frutilla"))
+	}
+	test"todas las golosinas de chocolate"{
+		mariano.comprar(chupetin)
+		mariano.comprar(alfajor)
+		mariano.comprar(caramelo)
+		mariano.comprar(oblea)
+		mariano.comprar(bombon)
+		mariano.comprar(tuttifrutti)
+		tuttifrutti.mordisco() // tuttifrutti era de frutilla y luego del mordisco es chocolate
+		assert.equals([alfajor,tuttifrutti],mariano.golosinasDeSabor("chocolate"))
+	}
+	
+	test"los sabores de las golosinas compradas son vainilla,naranja,frutilla,chocolate "{
+		mariano.comprar(oblea)
+		mariano.comprar(chupetin)
+		mariano.comprar(caramelo)
+		mariano.comprar(alfajor)
+		assert.equals(["vainilla","naranja","frutilla","chocolate"],mariano.sabores())
+	}
+}
