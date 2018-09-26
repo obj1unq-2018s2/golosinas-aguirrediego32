@@ -1,3 +1,7 @@
+// TODO Algunos tests se llaman como este chocolatinestest y otros se llaman sin test, como bombon.wtest.
+// Deberías elegir una y ser consistente.
+// Personalmente prefiero la segunda, aunque ambas están bien mientras seas consistente.
+
 import golosinas.*
 describe "test chocolatin"{
 	test"peso inicial"{
@@ -18,5 +22,7 @@ describe "test chocolatin"{
 		chocolatin.pesoInicial(100)
 		chocolatin.mordisco()
 		assert.equals(98,chocolatin.peso())
+		
+		// TODO Me gustaría un test que verifique que no se modifica el pesoInicial después del mordisco.
 	}
 }

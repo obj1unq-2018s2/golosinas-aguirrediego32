@@ -19,6 +19,7 @@ describe "test oblea"{
 	oblea.mordisco()
 	assert.equals(125,oblea.peso())
 	}
+	// TODO Test mal escrito!
 	test"mordisco 2"
 	oblea.mordisco()
 	oblea.mordisco()

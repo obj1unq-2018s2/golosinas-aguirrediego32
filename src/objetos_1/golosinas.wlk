@@ -2,6 +2,8 @@ object bombon {
 	var  peso = 15
 	method precio() { return 5 }
 	method peso() { return peso }
+	
+	// TODO La lógica en este método no evita que el peso pueda ser negativo.
 	method mordisco() {if(peso > 0)
 						{ peso = peso * 0.8 - 1 			
 						}else{ peso = 0}
@@ -16,6 +18,8 @@ object alfajor {
 	method precio() { return  12}
 	method gusto() {return "chocolate"}
 	method libreGluten(){return false}
+
+	// TODO Acá la validación > 0 es innecesaria, no va a pasar nunca.
 	method mordisco(){return if(peso > 0)
 						{peso = peso * 0.8
 						}else{ peso = 0
@@ -31,6 +35,7 @@ object caramelo {
 	method libreGluten() {return true}
 	method mordisco(){if(peso > 0)
 		{peso = peso - 1
+		// TODO No podés asignar un string en peso, rompés el caramelo.
 		}else{ peso ="ya no hay mas caramelo "
 			 }
 		}
@@ -44,6 +49,7 @@ object chupetin {
 	method libreGluten(){return true}
 	method mordisco(){if(peso > 2)
 					{peso -= peso * 0.1				
+					// TODO Esta línea no tiene sentido.
 					}else{ peso}
 	}
 }
@@ -76,6 +82,8 @@ object chocolatin {
 		return pesoActual
 	}
 	method precio(){return pesoInicial * 0.5}
+	
+	// TODO El peso actual podría terminar siendo negativo	
 	method mordisco(){ pesoActual = pesoActual -2}
 }
 

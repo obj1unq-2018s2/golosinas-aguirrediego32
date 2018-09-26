@@ -1,3 +1,6 @@
+// TODO Es desprolijo este nombre, por qué hay dos tests de golosina bañada? 
+// La próxima ponele un nombre más claro.
+
 import golosinas.*
 describe "test golosinas baniadas chocolatin"{
 	test"peso"{
@@ -25,6 +28,7 @@ describe "test golosinas baniadas chocolatin"{
 		assert.equals(100,golosinaBaniada.peso())
 	}
 	
+	// TODO Este test no está bien escrito
 	test"mordisco 2"
 	chocolatin.pesoInicial(100)
 	golosinaBaniada.baniaA(chocolatin)
